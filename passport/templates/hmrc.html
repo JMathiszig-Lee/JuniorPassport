@@ -1,0 +1,39 @@
+<div>
+    <form action="/adddoctor" method="post">
+        {% csrf_token %}
+        <div>
+            <h4>Employee Statement</h4>
+            <p><b>A</b> This is my first job since april</p>
+            <p><b>B</b> This is my only job but i've had another one since April</p>
+            <p><b>C</b> I've got multiple jobs</p>
+            <p><b>Enter A, B or C into the box below</b></p>
+            <p>{{form.employee_statment}}</p>
+        </div>
+        <div>
+            <h4>Student Loan</h4>
+            <p><b>Q9</b> Do you have a Student Loan which is not fully repaid?<br>
+                {{form.student_loan9}}
+            If Yes go to question <b>10</b>, if No go to <b>13</b></p>
+            <p><b>Q10</b> Did you complete or leave your studies before the 6th of April?<br>
+                {{form.student_loan10}}
+            If Yes go to question <b>11</b>, if No go to <b>13</b></p>
+            <p><b>Q11</b> Are you repaying your student load directly to the SLC by direct debit?<br>
+                {{form.student_loan11}}
+            If Yes go to question <b>13</b>, if No go to <b>12</b></p>
+            <p><b>What kind of student load do you have?</b><br>{{form.student_loanPlan}}</p>
+        </div>
+       <div>
+           <h4>Postgraduate Loan</h4>
+           <p><b>Q13</b> Do you have a Postgraduate Loan which is not fully repaid?<br>
+            {{form.postgraduate_loan13}}
+            If Yes go to question <b>14</b>, if No go to <b>Declaration</b></p>
+           <p><b>Q14</b> Did you complete your Postgraduate studies before the 6th of April?<br>
+            {{form.postgraduate_loan14}}
+            If Yes go to question <b>15</b>, if No go to <b>Declaration</b></p>
+           <p><b>Q15</b> Are you repaying your PostGraduate loan directly by Direct debit?<br>
+            {{form.postgraduate_loan15}}
+            Go to the Declaration</p>
+       </div>
+        <input type="submit" value="Submit">
+    </form>
+</div>

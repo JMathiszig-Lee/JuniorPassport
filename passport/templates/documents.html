@@ -1,9 +1,12 @@
 
-<h2>{{doctor.name}}</h2>
+<h2>{{doctor.first_name}} {{doctor.second_name}}</h2>
 <h3>{{doctor.speciality}}</h3>
 <h4>{{doctor.gmc_no}}</h3>
 <h4>{{doctor.email}}</h4>
 
+<div>
+    <a href="/hmrc/{{doctor.gmc_no}}">Generate HMRC starter form</a>
+</div>
 
 <form action="/documents/{{doctor.gmc_no}}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
@@ -12,3 +15,13 @@
     </table>
     <input type="submit" value="Submit">
   </form>
+
+<div>
+   
+    {% for cert in certs %}
+        <p>
+            <b>{{cert.title}}</b>
+            {{cert.exp_date}}
+        </p>
+    {% endfor %}    
+</div>

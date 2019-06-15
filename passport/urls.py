@@ -23,6 +23,7 @@ urlpatterns = [
     path('adddoctor', views.new_doctor, name='add a doctor'),
     path('viewdoctors', views.ViewDoctors.as_view(), name='view doctors' ),
     path('documents/<int:gmc_no>', views.show_documents),
+    path('hmrc/<int:gmc_no>', views.hmrc),
 ]
 
 

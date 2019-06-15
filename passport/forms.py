@@ -4,7 +4,7 @@ from . import models
 class DoctorForm(forms.ModelForm):
     class Meta:
         model = models.Doctor
-        fields = ['name', 'speciality', 'gmc_no', 'email']
+        fields = '__all__'
 
 class DocumentForm(forms.ModelForm):
     class Meta:
@@ -13,3 +13,8 @@ class DocumentForm(forms.ModelForm):
         widgets = {
             'exp_date': forms.widgets.SelectDateWidget()
         }
+
+class StarterFrom(forms.ModelForm):
+    class Meta:
+        model = models.HMRCstarter
+        fields = '__all__'
