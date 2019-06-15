@@ -14,5 +14,5 @@ class Doctor(models.Model):
 class Certificate(models.Model):
     user = models.ForeignKey(Doctor, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
-    exp_date=  models.DateTimeField()
-    cert_file = models.FileField(upload_to='certifcates')
+    exp_date=  models.DateField()
+    cert_file = models.FileField(upload_to='certificates')

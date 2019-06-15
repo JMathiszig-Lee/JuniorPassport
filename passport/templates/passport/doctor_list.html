@@ -1,0 +1,11 @@
+
+{% block content %}
+    <h2>Doctors</h2>
+    <a href="adddoctor">Add a doctor!</a>
+    <ul>
+        {% for doctor in object_list %}
+            <li>{{ doctor.name }}</li>
+            <a href="documents/{{doctor.gmc_no}}">view documents</a>
+        {% endfor %}
+    </ul>
+{% endblock %}

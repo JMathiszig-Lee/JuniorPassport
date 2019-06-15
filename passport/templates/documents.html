@@ -1,0 +1,14 @@
+
+<h2>{{doctor.name}}</h2>
+<h3>{{doctor.speciality}}</h3>
+<h4>{{doctor.gmc_no}}</h3>
+<h4>{{doctor.email}}</h4>
+
+
+<form action="/documents/{{doctor.gmc_no}}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit">
+  </form>

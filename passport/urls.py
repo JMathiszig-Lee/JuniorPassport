@@ -21,6 +21,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('adddoctor', views.new_doctor, name='add a doctor'),
+    path('viewdoctors', views.ViewDoctors.as_view(), name='view doctors' ),
+    path('documents/<int:gmc_no>', views.show_documents),
 ]
 
 
